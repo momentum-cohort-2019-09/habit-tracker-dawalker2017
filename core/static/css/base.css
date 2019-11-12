@@ -1,265 +1,31 @@
-/*============| global positioning |=============*/
-
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
-
-/*============| global hyperlinks |=============*/
-
 * a {
-    text-decoration-line: none;
     text-decoration: none;
-    color: currentColor;
 }
-
-
-/*============| global buttons |=============*/
 
 * button:focus {
     outline: none;
 }
 
-
-/*============| top, header |=============*/
-
-.header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    height: 5.5rem;
-    background-color: #e9e0bf;
-    white-space: nowrap;
-    position: relative;
-    overflow-y: hidden;
-}
-
-
-/*============| in header, main logo |=============*/
+.main_box_container {}
 
 .logo_container {
-    /* background-size: cover; */
-    margin: -20px auto auto 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #e9e0bf;
 }
 
-
-/*============| in header, main logo |=============*/
-
-.logo_image {
+.logo {
     width: 300px;
 }
 
-
-/*============| profile tag, container |=============*/
-
-.profile_tag_container {
-    /* background-color: blue; */
-    display: flex;
-    flex-direction: row;
-}
-
-
-/*============| in profile tag, container around profile picture |=============*/
-
-.profile_picture_container {
-    /* background-color: darkblue; */
-    width: auto;
-}
-
-
-/*============| in profile tag, background behind profile picture |=============*/
-
-.profile_picture {
-    width: 25px;
-}
-
-
-/*============| in profile tag, container around profile picture |=============*/
-
-.profile_picture_background {
-    background-color: #dd5a48;
-    margin-top: 0.9rem;
-    margin-bottom: auto;
-    padding-top: 0.5rem;
-    padding-left: 0.6rem;
-    padding-right: 0.6rem;
-    padding-bottom: 0.2rem;
-    border-radius: 100rem;
-}
-
-
-/*============| in profile tag, container around text |=============*/
-
-.profile_text_container {
-    /* background-color: blue; */
-    width: auto;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-}
-
-
-/*============| in profile tag, profile text: username |=============*/
-
-.profile_username {
-    /* background-color: orange; */
-    font-size: 0.9rem;
-    text-align: right;
-    margin-top: 0.9rem;
-    margin-bottom: auto;
-    padding-top: 0;
-    padding-right: 0.3rem;
-    padding-left: 0.5rem;
-    padding-bottom: 0;
-    background-image: linear-gradient(#dd5a48, #dd5a48);
-    background-position: 50%;
-    background-size: 0% 100%;
-    background-repeat: no-repeat;
-    transition: background-size 0.2s, color 0.2s;
-}
-
-.profile_username:hover {
-    background-size: 100% 100%;
-    color: white;
-    cursor: pointer;
-}
-
-
-/*============| in profile tag, profile text: logout |=============*/
-
-.profile_logout {
-    /* background-color: lightcoral; */
-    font-size: 0.6rem;
-    text-align: right;
-    padding-right: 0.5rem;
-    background-image: linear-gradient(#dd5a48, #dd5a48);
-    background-position: 50%;
-    background-size: 0% 100%;
-    background-repeat: no-repeat;
-    transition: background-size 0.2s, color 0.2s;
-}
-
-.profile_logout:hover {
-    background-size: 100% 100%;
-    color: white;
-    cursor: pointer;
-}
-
-
-/*============| in header as sub-header, footer |=============*/
-
-.sub-header {
-    background-color: #dd5a48;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 1.5rem;
-    padding-top: 0.1rem;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    padding-bottom: 0.1rem;
-    font-size: 0.8rem;
-}
-
-
-/*============| footer, dividing lines around text |=============*/
-
-.divider {
-    border: 0.5px solid black;
-}
-
-
-/*============| footer, left nav |=============*/
-
-.left_nav_href {
-    background-color: #e9e0bf;
-    margin: 0;
-    width: 100%;
-    padding-top: 0.1rem;
-    padding-right: 0.1rem;
-    padding-left: 0.1rem;
-    padding-bottom: 0.1rem;
-    text-align: center;
-    background-image: linear-gradient(#dd5a48, #dd5a48);
-    background-position: 50%;
-    background-size: 0% 100%;
-    background-repeat: no-repeat;
-    transition: background-size 0.2s, color 0.2s;
-}
-
-.left_nav_href:hover {
-    background-size: 100% 100%;
-    color: white;
-    cursor: pointer;
-}
-
-
-/*============| footer, center nav |=============*/
-
-.center_nav_href {
-    background-color: #e9e0bf;
-    margin: 0;
-    width: 100%;
-    padding-top: 0.1rem;
-    padding-right: 0.1rem;
-    padding-left: 0.1rem;
-    padding-bottom: 0.1rem;
-    text-align: center;
-    background-image: linear-gradient(#dd5a48, #dd5a48);
-    background-position: 50%;
-    background-size: 0% 100%;
-    background-repeat: no-repeat;
-    transition: background-size 0.2s, color 0.2s;
-}
-
-.center_nav_href:hover {
-    background-size: 100% 100%;
-    color: white;
-    cursor: pointer;
-}
-
-
-/*============| footer, right nav |=============*/
-
-.right_nav_href {
-    background-color: #e9e0bf;
-    margin: 0;
-    width: 100%;
-    padding-top: 0.1rem;
-    padding-right: 0.1rem;
-    padding-left: 0.1rem;
-    padding-bottom: 0.1rem;
-    text-align: center;
-    background-image: linear-gradient(#dd5a48, #dd5a48);
-    background-position: 50%;
-    background-size: 0% 100%;
-    background-repeat: no-repeat;
-    transition: background-size 0.2s, color 0.2s;
-}
-
-.right_nav_href:hover {
-    background-size: 100% 100%;
-    color: white;
-    cursor: pointer;
-}
-
-
-/*============| middle, body |=============*/
-
-body {
-    width: 100%;
-    height: 100%,
-}
-
-
-/*============| container, around content block in body|=============*/
-
-.body_content {
+.base_container {
     margin-top: 1rem;
     margin-right: 1rem;
     margin-left: 1rem;

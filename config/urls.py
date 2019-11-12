@@ -20,7 +20,14 @@ from django.conf import settings
 from core import views
 
 urlpatterns = [
-    path('', views.dashboard, name="dashboard"),
-    # path('', TemplateView.as_view(template_name="core/login.html"), name='login'),
-    path('admin/', admin.site.urls)
+
+    path('', views.index, name="index"),
+    path('accounts/', include('registration.backends.simple.urls')),
+    path('dashboard/', views.dashboard, name="dashboard"),
+    path('dashboard/add_log/<int:pk>', views.add_log, name='add_log'),
+    path('delete_log/<int:pk>', views.delete_log, name='delete_log'),
+    path('log/', views.log, name="log"),
+    path('habits/', views.habits, name='habits'),
+    path('admin/', admin.site.urls),
+
 ]

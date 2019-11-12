@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base_app.css' %}">
+    <script src="{% static 'js/main.js' %}" defer></script>
+</head>
+
+
+<header class="header">
+    <div class="logo_container"><img class="logo_image" src="{% static 'assets/cover.png' %}"></div>
+    <div class="profile_tag_container">
+        <div class="profile_picture_container">
+            <div class="profile_picture_background"><img class="profile_picture" src="{% static 'assets/profile-picture.png' %}"> </div>
+        </div>
+        <div class="profile_text_container">
+            <div class="profile_username">{{ user }}</div>
+            <a href="{% url 'auth_logout' %}"><div class="profile_logout">> Log-out</div></a>
+        </div>
+    </div>
+    <footer class="sub-header">
+        <div class="divider"></div>
+        <a href="{% url 'dashboard' %}" class="left_nav_href"><div class="nav_dashboard">Dashboard</div></a>
+        <div class="divider"></div>
+        <a href="{% url 'log' %}" class="center_nav_href"><div class="nav_etc1">Logs</div></a>
+        {% comment %} <div class="divider"></div>
+        <a href="" class="right_nav_href"><div class="nav_etc2">[FUTURE_LINK]</div></a> {% endcomment %}
+        <div class="divider"></div>
+    </footer>
+</header>
+
+<body>
+    <div class="body_content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+
+</html>

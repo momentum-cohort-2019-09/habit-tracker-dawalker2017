@@ -1,0 +1,31 @@
+{% extends 'base_app.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/log.css' %}">
+
+<div class="main_page_container_log">
+    {% for log in user.logs.all %}
+        <div class="log_header">
+            <div class="log_header_text">
+                <a href="{% url 'habits' %}">{{ log.subject }}</a>
+            </div>
+            <div class="log_button_container">
+                <div class="button_edit_container">
+                    <a href="" class="log_link"><button class="log_button"><img class="log_image" src="{% static 'assets/edit.png' %}"></button></a>
+                </div>
+                <div class="button_delete_container">
+                    <button class="log_button" data-log-pk="{{ log.pk }}"><img class="log_image" data-log-pk="{{ log.pk }}" src="{% static 'assets/delete.png' %}"></button>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="add_log_container">
+    <div class="button_add_container">
+        <a href="{% url 'add_log' user.pk %}" class="log_link"><button class="log_button add_log_button"> Create New Log</button></a>
+    </div>
+</div>
+
+{% endblock %}

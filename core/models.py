@@ -5,26 +5,63 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     pass
 
-#===========================================| Habit class |=========================================#
-class Habit(models.Model):
+#===========================================| Log class |=========================================#
+class Log(models.Model):
     user = models.ForeignKey(
         to=User,
         on_delete=models.CASCADE,
-        related_name="habits",
+        related_name="logs",
         )
 
     subject = models.CharField(
-        max_length=25,
+        max_length=50,
         verbose_name="Subject:",
         blank=False,
         null=True,
-        help_text="Max Characters: 25"
+        help_text="Max Characters: 50"
         )
 
-    description = models.CharField(
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+        )
+
+    updated_at = models.DateTimeField(
+        auto_now=True,
+        )
+
+    is_active = models.BooleanField(
+        default=True,
+        )
+    
+    Habits_completed = models.IntegerField(
+        default=0,
+    )
+
+    def __str__(self):
+        return self.subject
+    def number_of_habits(self):
+        return self.habits.count()
+
+#===========================================| Habit class |=========================================#
+class Habit(models.Model):
+    log = models.ForeignKey(
+        to=Log,
+        on_delete=models.CASCADE,
+        related_name="habits"
+        )
+
+    title = models.CharField(
+        max_length=255,
+        verbose_name="Title:",
+        blank=False,
+        null=True,
+        help_text="Max Characters: 255"
+        )
+
+    description = models.TextField(
         max_length=255,
         verbose_name="Description:",
-        blank=False,
+        blank=True,
         null=True,
         help_text="Max Characters: 255",
         )
@@ -40,14 +77,8 @@ class Habit(models.Model):
     is_active = models.BooleanField(
         default=True,
         )
-
+    
     def __str__(self):
-        return self.subject
+        return self.title
     def __str__(self):
         return self.description
-    def __str__(self):
-        return self.created_at
-    def __str__(self):
-        return self.updated_at
-    def __str__(self):
-        return self.is_active
