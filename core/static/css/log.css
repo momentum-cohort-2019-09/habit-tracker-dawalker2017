@@ -1,0 +1,124 @@
+* button:focus {
+    outline: none;
+}
+
+* a {
+    text-decoration-line: none;
+    text-decoration: none;
+    color: currentColor;
+}
+
+.main_page_container_log {
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    height: 24rem;
+    overflow: scroll;
+    border-top: 3px solid #dd5a48;
+    border-bottom: 3px solid #dd5a48;
+    scroll-behavior: smooth;
+}
+
+.log_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #e9e0bf;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #dd5a48;
+    width: 100%;
+    padding-top: 0.5rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+    border-right: 5px solid #dd5a48;
+    border-left: 5px solid #dd5a48;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.log_header_text {
+    margin-top: 0.4rem;
+    margin-bottom: auto;
+}
+
+.log_button_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.button_edit_container {
+    margin-right: 0.5rem;
+}
+
+.button_delete_container {
+    margin-right: 0.5rem;
+}
+
+.log_link {}
+
+.log_button {
+    background-color: #dd5a48;
+    width: 40px;
+    height: 40px;
+    border-top: 5px solid #f57b6b;
+    border-right: 5px solid #f57b6b;
+    border-left: 5px solid #924035;
+    border-bottom: 5px solid #924035;
+    border-top-left-radius: 100rem;
+    border-top-right-radius: 100rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 100rem;
+    padding: 0.2rem;
+    cursor: pointer;
+}
+
+.log_button:hover {
+    background-color: #e79387;
+}
+
+.log_button:active {
+    background-color: #924035;
+    border-top: 5px solid #a85247;
+    border-right: 5px solid #a85247;
+    border-left: 5px solid #5f2922;
+    border-bottom: 5px solid #5f2922;
+    transform: scale(0.8);
+}
+
+.log_image {
+    width: 15px;
+}
+
+.add_log_container {
+    /* background-color: orange; */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.button_add_container {
+    /* background-color: red; */
+}
+
+.add_log_button {
+    width: auto;
+    height: auto;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+}
